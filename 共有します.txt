@@ -32,3 +32,5 @@ test
 uhee
 pulltest
 pulltest2
+pulltest by another PC
+auto pulling
