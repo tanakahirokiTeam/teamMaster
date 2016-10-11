@@ -32,5 +32,9 @@ test
 uhee
 pulltest
 pulltest2
+<<<<<<< HEAD
 pulltest by another PC
 auto pulling
+=======
+pulltest by another PC
+>>>>>>> c6106b52f7dd76ed876fec2f7c1868a6743899fb
