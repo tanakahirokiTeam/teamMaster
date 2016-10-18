@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="ja" class="ie6 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="ja" class="ie7 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="ja" class="ie8 ielt10 ielt9"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="ja" class="ie9 ielt10"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><! <html lang="ja"> --><!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http:www.thymeleaf.org">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ログイン | アンケートシステム
+    </title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" type="text/css" href="../css/sparkplug.css"
+    		th:href="@{/css/sparkplug.css}" />
+ <style>
+   /* スティッキーフッター
+   -------------------------------------------------- */
+   html {
+     position: relative;
+     min-height: 100%;
+   }
+   body {
+     /* 下で設定したフッターの高さを指定 */
+     margin-bottom: 75px;
+   }
+   .sp-footer {
+     position: absolute;
+     bottom: 0;
+     width: 100%;
+     margin: 0;
+     /* フッターの高さをpx指定 */
+     height: 75px;
+   }
+ </style>
+ <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+ <!--[if lt IE 9]>
+   <script src="../js/html5shiv.min.js"></script>
+   <script src="../js/respond.min.js"></script>
+ <![endif]-->
+</head>
+
+  <body>
+    <div class="container" id="pagetop">
+
+      <div class="jumbotron sp-jumbotron-skeleton sp-pb0">
+        <h1 class="sp-ta-c" title="System Name">アンケートシステム</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6 col-xs-offset-3">
+
+          <div class="panel sp-panel-default">
+                      <div class="panel-heading sp-ta-c">
+              <h2 class="panel-title"><font color="#ff0000"></font></h2>
+            </div>
+            
+            <div class="sp-iobox sp-iobox-h sp-skeleton">
+              <table class="table">
+                <tbody><tr>
+                  <td class="sp-p10">
+                    <input class="form-control input-lg" type="text" placeholder="ユーザーID" id="textbox10" />
+                  </td>
+                </tr>
+                <tr>
+                  <td class="sp-p10">
+                    <input class="form-control input-lg" type="password" placeholder="パスワード" id="textbox11" />
+                  </td>
+                </tr>
+              </tbody></table>
+            </div><!-- /sp-iobox -->
+            <div class="well well-sm">
+              <a href="/menu" role="button" class="btn btn-primary btn-lg btn-block"><b>ログイン</b></a>
+            </div>
+          </div><!-- /panel -->
+
+        </div><!-- /col-xs-6 -->
+      </div><!-- /row -->
+
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+
+
+
+        </div><!-- /col-xs-10 -->
+      </div><!-- /row -->
+
+    </div><!-- /container -->
+</body> 
+</html>   

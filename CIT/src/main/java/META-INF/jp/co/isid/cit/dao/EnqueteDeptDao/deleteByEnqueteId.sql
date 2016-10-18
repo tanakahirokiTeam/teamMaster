@@ -1,0 +1,1 @@
+delete ENQUETE_DEPT where enquete_id = /*enqueteId*/1

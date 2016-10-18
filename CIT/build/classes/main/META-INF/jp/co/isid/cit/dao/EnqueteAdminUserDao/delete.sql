@@ -1,0 +1,1 @@
+delete ENQUETE_ADMIN_USER where enquete_id = /*enqueteId*/1

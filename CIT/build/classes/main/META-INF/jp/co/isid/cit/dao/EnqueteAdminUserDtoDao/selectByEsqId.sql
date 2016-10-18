@@ -1,0 +1,1 @@
+select * from ENQUETE_DEPT where dept_id = /*id*/1;

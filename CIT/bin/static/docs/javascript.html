@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="ja" class="ie6 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="ja" class="ie7 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="ja" class="ie8 ielt10 ielt9"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="ja" class="ie9 ielt10"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <html lang="ja"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JavaScript | Sparkplug</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="css/sparkplug.css">
+    <link rel="stylesheet" href="css/CodeMirror/codemirror.css">
+    <link rel="stylesheet" href="css/CodeMirror/theme-sparkplug.css">
+
+    <style>
+      body { padding-top: 60px; /* 60px to make the container go all the way
+      to the bottom of the topbar */ }
+      h2 { padding-top: 30px!important; }
+      .panel h2 { padding-top: 0!important; /* パネルのタイトル部用調整 */ }
+      h3, h4 { padding-top: 20px; }
+      .sp-navbar-docs { background: #FFF; }
+      .sp-navbar-docs .navbar-nav > .active > a,
+      .sp-navbar-docs .navbar-nav > .active > a:hover,
+      .sp-navbar-docs .navbar-nav > .active > a:focus {
+        background: #fff;
+        padding-top: 6px;
+        border-top: 4px solid #27c07d;
+        color: #1a8255;
+      }
+      .alert h2, .alert h3, .alert h4, .modal h3, .modal h4 { padding-top: 0!important; } /* アラート内、モーダル内の見出しは余白ゼロ */
+      .page-header + h3 { padding-top: 0; }
+      .container .footer { margin-top: 20px; } /* 例示用フッターの上余白ツメ */
+
+      .hr-sample-container { border: 1px dotted red; }
+      .helper-sample-container { height: 150px; }
+      .helper-sample { background: #888; text-align: center; line-height: 80px; }
+      .squaredbox { width: 80px; height: 80px; }
+      .helper-sample-bg { background: #bbb; color: #fff; }
+      .ta-sample-container { height: 80px; }
+      .ta-helper-sample-bg {background: #888; padding: 10px 0; }
+      .va-sample-container { margin-bottom: 50px!important; }
+      .va-sample-container td { height: 60px; }
+      .rounded-sample { width: 100%; color: #fff; }
+      .bordered-sample { background: #eee; color: inherit; }
+
+      .lead { line-height: 1.6; }
+      #subhero {
+        padding: 46px 0 33px;
+        margin: -20px 0 30px;
+        background: /* #8ce254 */ #27c07d;
+        /* border-bottom: 1px solid #7ad03c; */
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+        font-weight: bold;
+      }
+      #subhero h1 {
+        color: #FFF;
+        font-weight: normal;
+        font-size: 48px;
+        margin-top: 0;
+      }
+      #subhero .lead {
+        color: #f5f5ff;
+        font-weight: bold;
+        font-size: 17px;
+      }
+
+      .tabbable .sp-nav-tabs-xs { margin-bottom: 10px; }
+      .tabbable .tab-content .datagrid,
+      .tabbable .tab-content .iobox,
+      .tabbable .tab-content .form-actions,
+      .tabbable .tab-content .panel,
+      .tabbable .tab-content .footer { margin-top: 0; } /* コンポーネントページ専用データグリッド余白調整 */
+      .tabbable .tab-content .form-actions+.iobox { margin-top: 10px; }
+      .tabbable .tab-content .form-actions-jointed-bottom { margin-top: -20px; }
+
+      #tab-tb18-example {
+        padding: 5px;
+      }
+      /* IE8でパネル「枠線の別スタイル」非対応のため、無駄な余白だけついてしまう対策 */
+      .ielt9 #tab-tb18-example {
+        padding: 0;
+      }
+
+      #ie8-alert {
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target="#subnav" data-offset="80"><!-- scrollspyのために追加 -->
+    <div class="navbar navbar-default navbar-fixed-top sp-navbar sp-navbar-docs" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Sparkplug</a>
+        </div><!-- /navbar-header -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="getting-started.html">つかいかた</a></li>
+            <li><a href="page-templates.html">ページテンプレート</a></li>
+            <li><a href="components.html">コンポーネント</a></li>
+            <li class="active"><a href="javascript.html">JavaScript</a></li>
+            <li><a href="themes.html">テーマ</a></li>
+            <li><a href="http://katanuki/" data-toggle="tooltip" data-placement="bottom" title="Sparkplugを使った画面を簡単な操作で生成できるジェネレータ" target="_blank">Katanuki <i class="fa fa-external-link-square"></i></a></li>
+          </ul>
+        </div><!-- /navbar-collapse -->
+      </div><!-- /container -->
+    </div><!-- /navbar -->
+
+    <div id="subhero">
+      <div class="container">
+        <h1>JavaScript</h1>
+        <p class="lead">Sparkplugで使われているJavaScriptの機能解説と使用方法。</p>
+      </div>
+    </div>
+
+    <div class="container" id="pagetop">
+      <div class="sp-subnav" id="subnav">
+        <ul class="nav nav-pills">
+          <li><a href="#h_overview">概要</a></li>
+          <li><a href="#h_datagrid">データグリッド</a></li>
+          <li><a href="#h_panel">パネル</a></li>
+          <li><a href="#h_tooltip">ツールチップ</a></li>
+          <li><a href="#h_popover">ポップオーバー</a></li>
+          <li><a href="#h_polyfill">Polyfill</a></li>
+        </ul>
+      </div>
+
+      <!--[if IE 8 ]>
+      <div id="ie8-alert" class="alert alert-warning" role="alert">
+        <h3><i class="fa fa-warning"></i> IE8をお使いの場合、本ページに表示されるHTMLソースコードはコピーしないでください</h3>
+        <p class="sp-text-secondary sp-mb0">IE8では、各コンポーネントの「HTML」タブ内に表示されるソースコードに不具合が発生します（引用符が欠けたり、インデントが消えたりします）。<br>コードをコピーしてお使いになる場合は、IE9以上またはChromeやFirefoxをご利用ください。</p>
+      </div>
+      <![endif]-->
+
+      <div class="page-header">
+        <h2 id="h_overview">概要</h2>
+      </div>
+      <p class="lead">
+        Sparkplugでは、JavaScriptを使ってコンポーネントにリッチで動きのあるインタラクションを追加しています。<br>
+        利用にあたっては、あらかじめ「<strong>sparkplug.js</strong>」をはじめとするJSファイル一式を読み込んでおく必要があります。<br>すべての<a href="page-templates.html">ページテンプレート</a>は、はじめからこれらのJSファイル一式が読み込まれた状態になっています。</p>
+      </p>
+<pre>
+sparkplug-*.*.*/
+  └── js/
+      |── bootstrap.js
+      |── jquery-*.*.*.js
+      |── sparkplug.js
+      |── ...
+</pre>
+
+<textarea class="highlight">
+<script src="js/jquery-*.*.*.js"></script>  <!-- はじめにjQueryを読み込み -->
+<script src="js/bootstrap.js"></script>     <!-- 次にTwitter Bootstrap専用のJSを読み込み -->
+<script src="js/sparkplug.js"></script>     <!-- 最後にSparkplug専用のJSを読み込み --></textarea>
+
+      <div class="page-header">
+        <h2 id="h_datagrid">
+          データグリッド
+          <small>行選択機能の拡張</small>
+        </h2>
+      </div>
+      <p class="lead sp-mb10">
+        データグリッドコンポーネントの行選択インタラクションをより使いやすくするための機能拡張です。<br>
+        data属性またはJavaScriptから設定します。
+      </p>
+      <ul class="lead">
+        <li>全行一括チェック／解除機能を追加</li>
+        <li>チェック操作（クリック）可能エリアを行選択チェックボックスが属するセル（td要素）全体に拡張</li>
+        <li>チェックのついた行を自動的に強調表示</li>
+      </ul>
+
+      <div class="tabbable">
+        <ul class="nav nav-tabs sp-nav-tabs-xs">
+          <li class="active"><a href="#tab-dg9-example" data-toggle="tab" class='showExample'>Example</a></li>
+          <li><a href="#tab-dg9-html" data-toggle="tab" class='showHtml'>HTML</a></li>
+        </ul>
+        <div class="tab-content pb0">
+          <div id="tab-dg9-example" class="copy-source">
+            <div class="sp-datagrid" data-sp-toggle="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <thead>
+                  <tr>
+                    <th class="sp-row-selector">
+                      <input type="checkbox" checked>
+                    </th>
+                    <th style="width: 180px;">申請伝票No. / 申請日</th>
+                    <th style="width: 150px;">状況</th>
+                    <th>行先</th>
+                    <th style="width: 100px;">合計金額</th>
+                    <th style="width: 120px;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="sp-row-selected">
+                    <td class="sp-row-selector">
+                      <input type="checkbox" checked>
+                    </td>
+                    <td class="sp-va-m"><b><a href="#">LIKGK0-000051586</a></b><p class="sp-text-additional sp-mb0">2012/07/31</p></td>
+                    <td class="sp-va-m">申請中</td>
+                    <td class="sp-va-m">ABC社(12/07/01), DEF社(12/07/08)</td>
+                    <td class="sp-va-m sp-ta-r">1,210 <span class="sp-text-additional">円</span></td>
+                    <td class="sp-va-m sp-ta-c">
+                      <a href="#" role="button" class="btn btn-default">複製して申請</a>
+                    </td>
+                  </tr>
+                  <tr class="sp-row-selected">
+                    <td class="sp-row-selector">
+                      <input type="checkbox" checked>
+                    </td>
+                    <td class="sp-va-m"><b><a href="#">LIKGK0-000051586</a></b><p class="sp-text-additional sp-mb0">2012/07/31</p></td>
+                    <td class="sp-va-m">申請中</td>
+                    <td class="sp-va-m">ABC社(12/07/01), DEF社(12/07/08)</td>
+                    <td class="sp-va-m sp-ta-r">1,210 <span class="sp-text-additional">円</span></td>
+                    <td class="sp-va-m sp-ta-c">
+                      <a href="#" role="button" class="btn btn-default">複製して申請</a>
+                    </td>
+                  </tr>
+                  <tr class="sp-row-selected">
+                    <td class="sp-row-selector">
+                      <input type="checkbox" checked>
+                    </td>
+                    <td class="sp-va-m"><b><a href="#">LIKGK0-000051586</a></b><p class="sp-text-additional sp-mb0">2012/07/31</p></td>
+                    <td class="sp-va-m">申請中</td>
+                    <td class="sp-va-m">ABC社(12/07/01), DEF社(12/07/08)</td>
+                    <td class="sp-va-m sp-ta-r">1,210 <span class="sp-text-additional">円</span></td>
+                    <td class="sp-va-m sp-ta-c">
+                      <a href="#" role="button" class="btn btn-default">複製して申請</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div class="row">
+                <div class="col-xs-12">
+                  <form class="form-inline">
+                    <a href="#" role="button" class="btn btn-primary">再申請</a>
+                    <a href="#" role="button" class="btn btn-default">フラグ</a>
+                    <div class="btn-group dropup">
+                      <a href="#" role="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        その他
+                        <span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">あいうえお</a></li>
+                        <li><a href="#">かきくけこ</a></li>
+                        <li class="divider"></li>
+                        <li class="text-danger"><a href="#">削除</a></li>
+                      </ul>
+                    </div><!-- スプリットボタン -->
+                    <a href="#" role="button" class="btn btn-link sp-text-secondary">リンク</a>
+                  </form>
+                </div><!-- /col-xs-12 -->
+              </div>
+            </div><!-- /sp-datagrid -->
+          </div>
+          <div id="tab-dg9-html" class="copy-distination">
+            そーす
+          </div>
+        </div>
+      </div>
+
+      <h3>data属性から設定</h3>
+      <p><code>.sp-datagrid</code> が付与されている要素に <code>data-sp-toggle="sp-datagrid"</code> と指定します。</p>
+      <textarea class="highlight"><div class="sp-datagrid" data-sp-toggle="sp-datagrid"></textarea>
+      <p class="sp-mt10"><code>data-sp-toggle-{オプション名}={value}</code> と指定することで、オプション値を設定することも可能です。</p>
+      <p>
+        ただし、<strong>動的にデータグリッドの行を追加した場合、data属性からの設定では正常に動作しません</strong>ので、
+        その場合は<strong>JavaScriptから設定</strong>を行うようにしてください。
+      </p>
+
+      <h3>JavaScriptから設定</h3>
+      <p><code>spDatagrid</code> メソッドを使用します。オプションはメソッドのパラメータにオブジェクトリテラルで指定します。</p>
+      <p>また、パラメータに直接 <code>false</code> を渡すことで、機能を無効にすることも可能です。</p>
+      <p>
+        <strong>機能を有効化</strong>
+        <textarea class="highlight">$('#some-datagrid').spDatagrid();</textarea>
+      </p>
+      <p>
+        <strong>オプションを指定</strong>
+        <textarea class="highlight">$('#some-datagrid').spDatagrid({highlight: false});</textarea>
+      </p>
+      <p>
+        <strong>機能を無効化</strong>
+        <textarea class="highlight">$('#some-datagrid').spDatagrid(false);</textarea>
+      </p>
+
+      <h3>オプション</h3>
+      <p>data属性またはJavaScriptから指定可能なオプションは以下のとおりです。</p>
+      <div class="sp-datagrid">
+        <table class="table table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th class="sp-w120">オプション名</th>
+              <th class="sp-w120">型</th>
+              <th class="sp-w120">デフォルト</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>highlight</b></td>
+              <td>boolean</td>
+              <td>true</td>
+              <td>選択行をハイライトする。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="page-header">
+        <h2 id="h_panel">
+          パネル
+          <small>キーボード操作で開閉可能なパネル</small>
+        </h2>
+      </div>
+      <p class="lead sp-mb10">
+        パネルコンポーネントをキーボード操作で開閉可能にするための機能拡張です。<br>
+        data属性またはJavaScriptから設定します。
+      </p>
+      <ul class="lead">
+        <li>パネルボディの開閉機能を追加</li>
+        <li>タブキー、クリックによるフォーカスが可能</li>
+        <li>フォーカス時にEnterキーをクリックすることでパネルボディの開閉が可能</li>
+      </ul>
+
+      <div class="tabbable">
+        <ul class="nav nav-tabs sp-nav-tabs-xs">
+          <li class="active"><a href="#tab-dg9-example" data-toggle="tab" class='showExample'>Example</a></li>
+          <li><a href="#tab-dg9-html" data-toggle="tab" class='showHtml'>HTML</a></li>
+        </ul>
+        <div class="tab-content pb0">
+          <div id="tab-dg9-example" class="copy-source">
+            <div class="panel sp-panel-default" data-sp-toggle="panel">
+              <div class="panel-heading" tabindex="0">
+                <h2 class="panel-title"><i class="fa fa-fw fa-caret-down"></i> 開閉可能なパネル</h2>
+              </div>
+              <div class="panel-body">
+                その黒い平らな頂上は、北の大熊星の下に、ぼんやりふだんよりも低く連って見えました。
+              </div>
+            </div><!-- /panel -->
+
+            <div class="panel sp-panel-default collapsed" data-sp-toggle="panel">
+              <div class="panel-heading" tabindex="0">
+                <h2 class="panel-title"><i class="fa fa-fw fa-caret-right"></i> 開閉可能なパネル</h2>
+              </div>
+              <div class="panel-body" style="display: none;">
+                デフォルトを閉じた状態にしたいときはこちらを使います。
+              </div>
+            </div><!-- /panel -->
+          </div>
+          <div id="tab-dg9-html" class="copy-distination">
+            そーす
+          </div>
+        </div>
+      </div>
+
+      <h3>data属性から設定</h3>
+      <p><code>.panel</code> が付与されている要素に <code>data-sp-toggle="panel"</code> と指定します。</p>
+      <textarea class="highlight"><div class="panel" data-sp-toggle="panel"></textarea>
+      <p class="sp-mt10"><code>data-sp-toggle-{オプション名}={value}</code> と指定することで、オプション値を設定することも可能です。</p>
+
+      <h3>JavaScriptから設定</h3>
+      <p><code>spPanel</code> メソッドを使用します。オプションはメソッドのパラメータにオブジェクトリテラルで指定します。</p>
+      <p>また、パラメータに直接 <code>false</code> を渡すことで、機能を無効にすることも可能です。</p>
+      <p>
+        <strong>機能を有効化</strong>
+        <textarea class="highlight">$('#some-panel').spPanel();</textarea>
+      </p>
+      <p>
+        <strong>オプションを指定</strong>
+        <textarea class="highlight">$('#some-panel').spPanel({speed: 'slow'});</textarea>
+      </p>
+      <p>
+        <strong>機能を無効化</strong>
+        <textarea class="highlight">$('#some-panel').spPanel(false);</textarea>
+      </p>
+
+      <h3>オプション</h3>
+      <p>data属性またはJavaScriptから指定可能なオプションは以下のとおりです。</p>
+      <div class="sp-datagrid">
+        <table class="table table-striped table-bordered table-condensed">
+          <thead>
+            <tr>
+              <th class="sp-w120">オプション名</th>
+              <th class="sp-w120">型</th>
+              <th class="sp-w120">デフォルト</th>
+              <th>説明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>speed</b></td>
+              <td>string</td>
+              <td>'fast'</td>
+              <td>
+                パネルを開閉するスピード。<br>
+                'fast' | 'normal' | 'slow'
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="page-header">
+        <h2 id="h_tooltip">
+          ツールチップ
+          <small></small>
+        </h2>
+      </div>
+      <p class="lead sp-mb10">
+        <code>data-toggle="tooltip"</code> を付与するとツールチップが自動で有効になります。
+        追加でJavaScriptのコードを実行する必要はありません。ツールチップはデフォルトで、マウスオーバーしてから0.5秒（500ms）後に表示、マウスアウトの0.1秒（100ms）後に非表示となります。
+      </p>
+
+      <div class="tabbable">
+        <ul class="nav nav-tabs sp-nav-tabs-xs">
+          <li class="active"><a href="#tab-tt1-example" data-toggle="tab" class='showExample'>Example</a></li>
+          <li><a href="#tab-tt1-html" data-toggle="tab" class='showHtml'>HTML</a></li>
+        </ul>
+        <div class="tab-content pb0">
+          <div id="tab-tt1-example" class="copy-source">
+            <div>
+              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Tooltip on left</button>
+
+              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+
+              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Tooltip on bottom</button>
+
+              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Tooltip on right</button>
+            </div>
+          </div>
+          <div id="tab-tt1-html" class="copy-distination">
+            そーす
+          </div>
+        </div>
+      </div>
+
+      <h3>JavaScriptによる設定やオプション</h3>
+      <p><a href="http://getbootstrap.com/javascript/#tooltips">Bootstrapのドキュメント</a>を参照してください。</p>
+
+      <div class="page-header">
+        <h2 id="h_popover">
+          ポップオーバー
+          <small></small>
+        </h2>
+      </div>
+      <p class="lead sp-mb10">
+        <code>data-toggle="popover"</code> を付与するとポップオーバーが自動で有効になります。
+        追加でJavaScriptのコードを実行する必要はありません。
+      </p>
+
+      <div class="tabbable">
+        <ul class="nav nav-tabs sp-nav-tabs-xs">
+          <li class="active"><a href="#tab-po1-example" data-toggle="tab" class='showExample'>Example</a></li>
+          <li><a href="#tab-po1-html" data-toggle="tab" class='showHtml'>HTML</a></li>
+        </ul>
+        <div class="tab-content pb0">
+          <div id="tab-po1-example" class="copy-source">
+            <div>
+              <button type="button" class="btn btn-default" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on left
+              </button>
+
+              <button type="button" class="btn btn-default" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on top
+              </button>
+
+              <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+                sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on bottom
+              </button>
+
+              <button type="button" class="btn btn-default" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                Popover on right
+              </button>
+            </div>
+          </div>
+          <div id="tab-po1-html" class="copy-distination">
+            そーす
+          </div>
+        </div>
+      </div>
+
+      <p>
+        <code>data-trigger</code>属性に<code>hover</code>と<code>focus</code>のどちらか、または両方が指定された場合、ポップオーバーの表示非表示に遅延がかかります。<br>デフォルトで、hover/focus開始してから0.5秒（500ms）後に表示、hover/focusアウトの0.1秒（100ms）後に非表示となります。
+      </p>
+
+      <div class="tabbable">
+        <ul class="nav nav-tabs sp-nav-tabs-xs">
+          <li class="active"><a href="#tab-po2-example" data-toggle="tab" class='showExample'>Example</a></li>
+          <li><a href="#tab-po2-html" data-toggle="tab" class='showHtml'>HTML</a></li>
+        </ul>
+        <div class="tab-content pb0">
+          <div id="tab-po2-example" class="copy-source">
+            <div>
+              <button type="button" class="btn btn-default" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover focus">
+                Popover on left
+              </button>
+
+              <button type="button" class="btn btn-default" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover focus">
+                Popover on top
+              </button>
+
+              <button type="button" class="btn btn-default" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+                sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover focus">
+                Popover on bottom
+              </button>
+
+              <button type="button" class="btn btn-default" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-trigger="hover focus">
+                Popover on right
+              </button>
+            </div>
+          </div>
+          <div id="tab-po2-html" class="copy-distination">
+            そーす
+          </div>
+        </div>
+      </div>
+
+      <h3>JavaScriptによる設定やオプション</h3>
+      <p><a href="http://getbootstrap.com/javascript/#popovers">Bootstrapのドキュメント</a>を参照してください。</p>
+
+      <div class="page-header">
+        <h2 id="h_polyfill">Polyfill</h2>
+      </div>
+      <p class="lead">
+        SparkplugではHTML5やCSS3の機能を使用していますが、これらに未対応のブラウザ(主に旧バージョンのIE)でも最新の対応ブラウザ同様に表示／動作する仕組み(<a href="http://www.adobe.com/jp/devnet/dreamweaver/articles/html5pack_css3_part6.html#articlecontentAdobe_numberedheader_1">Polyfill</a>）を提供しています。<br>
+      </p>
+
+      <h3>autofocus属性の指定を有効にする（IE8-9向け）</h3>
+      <p>HTML5の<a href="http://www.htmq.com/html5/input_autofocus.shtml">autofocus属性</a>に対応していないIE8-9でも、autofocusを指定した要素がページロード時に自動的にフォーカスされるようになります。<br>
+      対象の要素にautofocus属性を付与するだけで、特に設定は必要ありません。</p>
+
+      <h3>placeholder属性の指定を有効にする（IE8-9向け）</h3>
+      <p>HTML5の<a href="http://www.htmq.com/html5/input_placeholder.shtml">placeholder属性</a>に対応していないIE8-9でも、テキストボックス未入力時のみ表示されるヒントテキストが有効になります。<br>
+      対象の要素にplaceholder属性を付与するだけで、特に設定は必要ありません。</p>
+
+      <hr class="sp-bordered-transparent sp-mt0">
+
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+
+          <div class="tabbable">
+            <ul class="nav nav-tabs sp-nav-tabs-xs">
+              <li class="active"><a href="#tab-lb4-example" data-toggle="tab" class='showExample'>Example</a></li>
+              <li><a href="#tab-lb4-html" data-toggle="tab" class='showHtml'>HTML</a></li>
+            </ul>
+            <div class="tab-content">
+              <div id="tab-lb4-example" class="copy-source">
+                <div class="panel sp-panel-default">
+                  <div class="sp-iobox sp-iobox-h sp-skeleton">
+                    <table class="table">
+                      <tbody><tr>
+                        <td class="form-inline">
+                          <input class="form-control input-lg sp-w300" type="text" placeholder="ユーザーID">
+                          <input class="form-control input-lg sp-w300" type="password" placeholder="パスワード">
+                          <a href="javascript:void(0);" role="button" class="btn btn-primary btn-lg"><b>ログイン</b></a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <ul class="list-inline inline-divided">
+                            <li class="form-inline">
+                              <div class="checkbox sp-text-secondary">
+                                <label>
+                                  <input type="checkbox"> ログインしたままにする
+                                </label>
+                              </div>
+                              </li>
+                            <li>
+                              <a href="javascript: void(0);" class="sp-text-secondary">パスワードを忘れた場合</a>
+                            </li>
+                          </ul>
+                        </td>
+                      </tr>
+                    </tbody></table>
+                  </div><!-- /sp-iobox -->
+                </div><!-- /panel -->
+              </div>
+              <div id="tab-lb4-html" class="copy-distination">
+                そーす
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.col-xs-10 -->
+      </div><!-- /.row -->
+
+      <p>autofocus/placeholderのPolyfillを使うためには、使用するページで「<strong><a href="https://github.com/mathiasbynens/jquery-placeholder">jquery.placeholder.js</a></strong>」を読み込む必要があります。<br>なお、Sparkplugにはjquery.placeholder.jsがあらかじめ同梱されているほか、すべての<a href="page-templates.html">ページテンプレート</a>は、はじめから jquery.placeholder.js が読み込まれた状態になっています。</p>
+<pre>
+sparkplug-*.*.*/
+  └── js/
+      |── jquery.placeholder.js
+      |── ...
+</pre>
+
+<textarea class="highlight">
+<script src="js/jquery-*.*.*.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/sparkplug.js"></script> <!-- このすぐ後でPolyfillを読み込み -->
+<script src="js/jquery.placeholder.js"></script></textarea>
+
+    </div><!-- コンテンツエリア -->
+
+    <hr class="sp-bordered-transparent sp-p10">
+    <hr class="sp-mb0">
+    <div class="sp-footer sp-skeleton sp-mt0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-4">
+            <ul class="list-inline inline-divided sp-text-secondary sp-sp-mt10">
+              <li><a href="release-notes.html">リリースノート</a></li>
+              <li><a href="terms-of-use.html">利用規約</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-8">
+            <p class="pull-right sp-ta-r sp-text-additional">
+              &copy; Information Services International-Dentsu, Ltd.<br>
+              Designed and built by ISID System Technologies Dept. Technology Headquarters.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sp-btn-sticky-bottom"><a href="#pagetop"><i class="fa fa-angle-up"></i>ページの先頭へ</a></div>
+    <!-- 画面下端にはりつく「ページの先頭へ」ボタン -->
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/sparkplug.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/CodeMirror/codemirror.js"></script>
+    <script src="js/CodeMirror/xml.js"></script>
+    <script src="js/CodeMirror/htmlmixed.js"></script>
+    <script src="js/copySrcToHtml.js"></script>
+    <script>
+      var i;
+      var editor = [];
+      var textareaNum = $(".highlight").length;
+
+      for (i = 0 ; i < textareaNum; i++) {
+        $(".highlight").eq(i).attr("id", 'highlightTextarea' + i);
+        var editor = CodeMirror.fromTextArea(document.getElementById("highlightTextarea" + i), { mode: "htmlmixed", lineNumbers: true, tabMode: "indent", readOnly: "true"});
+      }
+      //var editor = CodeMirror.fromTextArea(document.getElementById("hoge"), {mode: "htmlmixed", tabMode: "indent", readOnly: "true"});
+    </script>
+  </body>
+</html>

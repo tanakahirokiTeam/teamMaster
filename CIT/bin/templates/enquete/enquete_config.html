@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="ja" class="ie6 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="ja" class="ie7 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="ja" class="ie8 ielt10 ielt9"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="ja" class="ie9 ielt10"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!-->
+<!--<html lang="ja">-->
+<!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http:www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>アンケート新規作成　|　アンケートシステム</title>
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="stylesheet" type="text/css" href="../css/sparkplug.css"
+		th:href="@{/css/sparkplug.css}" />
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+<link rel="stylesheet" type="text/css" href="../css/jquery-ui.css"
+		th:href="@{/css/jquery-ui.css}" />
+		
+<script type="text/javascript" src="../js/jquery-1.11.3.js" th:href="@{/js/jquery-1.11.3.js}"></script>
+<script type="text/javascript" src="../js/datepicker-ja.js" th:href="@{/js/datepicker-ja.js}"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js" th:href="@{/js/jquery-ui.min.js}"></script>
+<script>
+$(function() {
+	 $.datepicker.setDefaults($.datepicker.regional['ja']);
+    $('.datePicker').datepicker( {
+        dateFormat: 'yy-mm-dd',
+        showMonthAfterYear: true,
+        hideIfNoPrevNext: true,
+        minDate: 'd'
+    });
+});
+</script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../static/js/html5shiv.min.js"></script>
+      <script src="../static/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sp-with-navbar">
+	<div class="navbar navbar-inverse navbar-fixed-top sp-navbar"
+		role="navigation">
+		<div class="container-fluid1">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand"> <i class="fa fa-cloud"></i> <b>アンケートシステム</b>
+				</a>
+			</div>
+			<!-- /navbar-header -->
+			<ul class="nav navbar-nav">
+				<li><a href="/menu">メニュー</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="dropdown"><a href="#" role="button"
+					class="dropdown-toggle" data-toggle="dropdown"
+					aria-expanded="false"> <i class="fa fa-user"></i>ESQID:9876
+						山田 太郎 <b class="caret"></b></a></li>
+				<li><a href="/index">ログアウト</a></li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="container-fluid" id="pagetop">
+		<h2>アンケート新規作成</h2>
+		<br/>
+		<div class="sp-iobox sp-iobox-h">
+			<table class="table">
+				<tr>
+					<th class="sp-iobox-label-area">
+						<div class="sp-label-container">
+							<label class="sp-text-secondary" for="textbox01">アンケートタイトル</label>
+							<span class="label label-danger"><small>必須</small></span>
+						</div>
+					</th>
+		<td colspan="2"><input class="form-control" type="text" placeholder="タイトルを入力してください"
+								 id="textbox01" value="2016年度　定期検診・人間ドック　受診前問診表" /></td>
+				</tr>
+
+				<tr>
+					<th class="sp-iobox-label-area">
+						<div class="sp-label-container">
+							<label class="sp-text-secondary">対象事業部</label> <span
+								class="label label-danger"><small>必須</small></span>
+						</div>
+					</th>
+					<td colspan="2">
+						<div class="checkbox">
+							<label> <input type="checkbox" /> ２０２０テクノロジー＆ビジネス開発室
+							</label>
+						</div>
+						<div class="checkbox">
+							<label> <input type="checkbox" /> 管理本部
+							</label>
+						</div>
+						<div class="checkbox">
+							<label> <input type="checkbox" /> 技術本部
+							</label>
+						</div>
+						<div class="checkbox">
+							<label> <input type="checkbox" /> 戦略ビジネス推進本部
+							</label>
+						</div>
+						<div class="checkbox">
+							<label> <input type="checkbox" /> グローバルビジネス推進本部
+							</label>
+						</div>
+						<div class="checkbox">
+							<label> <input type="checkbox" /> 金融ソリューション事業部
+							</label>
+						</div>
+						<div class="checkbox">
+							<label> <input type="checkbox" /> エンジニアリングソリューション部
+							</label>
+						</div>
+						<div class="checkbox">
+							<label> <input type="checkbox" /> オートモーティブ事業部
+							</label>
+						</div>
+						<div class="checkbox">
+							<label> <input type="checkbox" checked="checked" /> コミュニケーションIT事業部
+							</label>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<th class="sp-iobox-label-area">
+						<div class="sp-label-container">
+							<label class="sp-text-secondary">作成者</label>
+						</div>
+					</th>
+					<td colspan="2"><p>山田 太郎</p></td>
+				</tr>
+
+				<tr>
+					<th class="sp-iobox-label-area">
+						<div class="sp-label-container">
+							<label class="sp-text-secondary">実施期間</label> <span
+								class="label label-danger"><small>必須</small></span>
+						</div>
+					</th>
+					<td class="form-inline">
+						<div class="input-group">
+							<input class="form-control sp-w200 datePicker" type="text" placeholder="開始日"
+								 id="datePicker1" value="2016-07-30"/> 
+						</div>
+					</td>
+					<td class="form-inline" align="left">
+						<div class="input-group">
+							<input class="form-control sp-w200 datePicker" type="text" placeholder="終了日"
+								id="datePicker2" value="2016-08-30"/>
+						</div>
+					</td>
+				</tr>
+
+				<tr>
+					<th class="sp-iobox-label-area">
+						<div class="sp-label-container">
+							<label class="sp-text-secondary" for="textbox02">管理者</label> <span
+								class="label label-default"><small>任意</small></span>
+						</div>
+					</th>
+					<td class="form-inline">
+						<span>山田 太郎,  </span><span>山田 花子</span>
+					</td>
+					<td class="form-inline">
+						<a href="/enquete/manager" role="button" class="btn btn-primary sp-w100">
+						<b>管理者編集</b></a>
+					</td>
+				</tr>
+
+				<tr>
+					<th class="sp-iobox-label-area" rowspan="2">
+						<div class="sp-label-container">
+							<label class="sp-text-secondary" for="textbox01">質問1</label> <span
+								class="label label-danger"><small>必須</small></span>
+						</div>
+					</th>
+					<td colspan="2">
+						<h3>【択一選択】</h3>
+						<select class="form-control" id="selectbox01" style="width: 200px">
+							<option selected="selected">回答必須</option>
+							<option>回答任意</option>
+						</select><br/>
+						<input class="form-control" type="text"
+						placeholder="質問文を入力してください" id="textbox01" value="朝食を毎日食べていますか？"/><br/>
+						<textarea cols="30" rows="2" class="form-control" id="textarea1"
+							placeholder="補足説明があれば入力してください"></textarea><br/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input class="form-control" type="text"
+						placeholder="回答選択肢1" id="textbox01" value="ほぼ毎日食べている"/><br/>
+						<input class="form-control" type="text"
+						placeholder="回答選択肢2" id="textbox01" value="ときどき食べている"/><br/>
+						<input class="form-control" type="text"
+						placeholder="回答選択肢3" id="textbox01" value="ほとんど食べない"/><br/>
+						<div class="btn-group margincenter">
+						<a href="javascript:void(0);" role="button" class="btn btn-primary sp-w100"><strong>+</strong></a>
+						</div>					
+					</td>
+					<td>
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>		
+						<br/><br/>
+						<div class="btn-group marginrighter">
+							<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">質問削除</a>
+						</div>
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<th class="sp-iobox-label-area" rowspan="2">
+						<div class="sp-label-container">
+							<label class="sp-text-secondary" for="textbox01">質問2</label> <span
+								class="label label-danger"><small>必須</small></span>
+						</div>
+					</th>
+					<td colspan="2">
+						<h3>【複数選択】</h3>
+						<select class="form-control" id="selectbox01" style="width: 200px">
+							<option>回答必須</option>
+							<option selected="selected">回答任意</option>
+						</select><br/>
+						<input class="form-control" type="text"
+						placeholder="質問文を入力してください" id="textbox01" value="あなたが朝食を食べない理由として当てはまるものをチェックしてください。"/><br/>
+						<textarea cols="30" rows="2" class="form-control" id="textarea1"
+							placeholder="補足説明があれば入力してください">質問1で「時々食べている」「ほとんど食べない」と答えた方のみ</textarea><br/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<input class="form-control" type="text"
+						placeholder="回答選択肢1" id="textbox01" value="食べる習慣がないから"/><br/>
+						<input class="form-control" type="text"
+						placeholder="回答選択肢2" id="textbox01" value="食べる時間がないから"/><br/>
+						<input class="form-control" type="text"
+						placeholder="回答選択肢3" id="textbox01" value="おなかが空かないから"/><br/>
+						<input class="form-control" type="text"
+						placeholder="回答選択肢4" id="textbox01" value="準備するのが面倒だから"/><br/>
+						<input class="form-control" type="text"
+						placeholder="回答選択肢5" id="textbox01" value="食べないほうが調子が良いから"/><br/>
+						<input class="form-control" type="text"
+						placeholder="回答選択肢6" id="textbox01" value="ダイエットしているから"/><br/>
+						<input class="form-control" type="text"
+						placeholder="回答選択肢7" id="textbox01" value="その他"/><br/>
+						<div class="btn-group margincenter">
+						<a href="javascript:void(0);" role="button" class="btn btn-primary sp-w100"><strong>+</strong></a>
+						</div>	
+					</td>
+					<td>
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>	
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>	
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>
+						<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">×</a><br/><br/>		
+						<br/><br/>
+						<div class="btn-group marginrighter">
+							<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">質問削除</a>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="sp-iobox-label-area" rowspan="2">
+						<div class="sp-label-container">
+							<label class="sp-text-secondary" for="textbox01">質問3</label> <span
+								class="label label-danger"><small>必須</small></span>
+						</div>
+					</th>
+					<td colspan="2">
+						<h3>【自由記述】</h3>
+						<select class="form-control" id="selectbox01" style="width: 200px">
+							<option>回答必須</option>
+							<option selected="selected">回答任意</option>
+						</select><br/>
+						<input class="form-control" type="text"
+						placeholder="質問文を入力してください" id="textbox01" /><br/>
+						<textarea cols="30" rows="2" class="form-control" id="textarea1"
+							placeholder="補足説明があれば入力してください"></textarea><br/>
+					</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+						<div class="btn-group marginrighter">
+							<a href="javascript:void(0);" role="button" class="btn btn-danger sp-w100">質問削除</a>
+						</div>
+					</td>
+				</tr>
+		</table></div><br/>
+		<div class="sp-iobox sp-iobox-h">		
+		<table class="table">		
+				<tr>
+					<th class="sp-iobox-label-area">
+						<div class="sp-label-container">
+							<label class="sp-text-secondary">回答方法</label>
+						</div>
+					</th>
+					<td><label class="radio-inline"> <input type="radio"
+							name="radio1" checked="checked" /> 自由記述
+						</label> 
+						<label class="radio-inline"> <input type="radio"
+								name="radio1" /> 択一選択
+						</label> 
+						<label class="radio-inline"> <input type="radio"
+								name="radio1" /> 複数選択
+						</label>
+					</td>
+					<td>
+						<a href="UC2-1_2.html" role="button" class="btn btn-primary sp-w100">質問追加</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		</div><!-- /sp-maincontent -->		
+		<br/>
+			<div  align="center">
+			<a href="menu" role="button" class="btn btn-default sp-m5"><b>メニューへ戻る</b></a>
+			<a href="/menu" role="button" class="btn btn-default sp-m5"><b>　一時保存　</b></a>
+        	<a href="/enquete/confirm" role="button" class="btn btn-primary sp-m5"><b>　　確認　　</b></a>
+			</div>
+		<br/><br/>
+</body>
+</html>

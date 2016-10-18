@@ -1,0 +1,1 @@
+select * from esq_user where esq_id = /*id*/'li9010'

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- 基本設定をインポート -->
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+ <property name="OUTPUT_LOG_PATTERN" value="[%d] [%c] - %m%n"/>
+
+	<!-- 自作ロガーからファイルに出力 (AppLogger)-->
+	<appender name="FILE_App" class="ch.qos.logback.core.FileAppender">
+		<file>C:/log/app/app.log</file>
+		<encoder>
+			<pattern> %d{yyyyMMdd HH:mm:ss.SSS} [%t] %-5le %logger{36}[%file:%line] - %msg%n</pattern>
+		</encoder>
+	</appender>
+	<logger name="jp.co.cit.isid.AppLogger" level="info" additibity="false">
+		<appender-ref ref="FILE_App" />
+	</logger>
+	
+	
+	<!-- 自作ロガーからファイルに出力 (DbLogger)-->
+	 <appender name="FILE_DB" class="ch.qos.logback.core.FileAppender">
+        <encoder>
+            <pattern>${OUTPUT_LOG_PATTERN}</pattern>
+        </encoder>
+        <file>C:/log/db/app.log</file>
+    </appender>
+	<logger name="jp.co.cit.isid.DbLogger" level="info" additibity="false">
+		<appender-ref ref="FILE_DB" />
+	</logger>
+
+
+</configuration>

@@ -1,0 +1,1 @@
+select * from ENQUETE_ADMIN_USER where esq_id = /*id*/1 order by ENQUETE_ID desc

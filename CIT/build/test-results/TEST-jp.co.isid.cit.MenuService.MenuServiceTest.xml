@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="jp.co.isid.cit.MenuService.MenuServiceTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2016-10-12T13:52:44" hostname="DESKTOP-SA20EG6" time="0.02">
+  <properties/>
+  <testcase name="アンケートを削除できる" classname="jp.co.isid.cit.MenuService.MenuServiceTest" time="0.013"/>
+  <testcase name="ステータスが作成完了のアンケートを回答受付に変更できる" classname="jp.co.isid.cit.MenuService.MenuServiceTest" time="0.002"/>
+  <testcase name="アンケートIDをもとにMenuManagementVMクラスのオブジェクトを返す" classname="jp.co.isid.cit.MenuService.MenuServiceTest" time="0.002"/>
+  <testcase name="アンケートIDとESQIDをもとにMenuAnswerVMクラスのオブジェクトを返す" classname="jp.co.isid.cit.MenuService.MenuServiceTest" time="0.001"/>
+  <testcase name="ステータスが回答受付のアンケートを回答終了に変更できる" classname="jp.co.isid.cit.MenuService.MenuServiceTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,1 @@
+delete CHOICE where question_id = /*questionId*/3

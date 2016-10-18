@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="ja" class="ie6 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="ja" class="ie7 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="ja" class="ie8 ielt10 ielt9"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="ja" class="ie9 ielt10"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!-->
+<!-- <html lang="ja">-->
+<!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http:www.thymeleaf.org">
+
+<head>
+<STYLE type="text/css">
+</STYLE>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>リキッド／1カラム | System Name</title>
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="stylesheet" type="text/css" href="../css/sparkplug.css" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+      <script src="../js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="sp-with-navbar-subnav">
+	<div class="navbar navbar-inverse navbar-fixed-top sp-navbar"
+		role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand"> <i class="fa fa-cloud"></i> <b>アンケートシステム</b>
+				</a>
+			</div>
+			<!-- /navbar-header -->
+			<ul class="nav navbar-nav">
+				<li><a href="/menu">メニュー</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+
+				<li class="dropdown"><a href="#" role="button"
+					class="dropdown-toggle" data-toggle="dropdown"
+					aria-expanded="false"> <i class="fa fa-user"></i>ESQID:9876 山田
+						太郎 <b class="caret"></b></a></li>
+				<li><a href="/index">ログアウト</a></li>
+			</ul>
+		</div>
+		<!-- /container-fluid -->
+	</div>
+	<!-- /navbar -->
+	<div class="sp-fixed-sidenav"
+		style="background-color: #ffffff; position: absolute; top: 40px; left: 70px; ">
+		<h2>管理者設定</h2>
+	</div>
+	<div class="sp-fixed-sidenav"
+		style="background-color: #ffffff; position: absolute; top: 100px; left: 70px; width: 500px;">
+		<div class="panel sp-panel-default">
+			<div class="panel-heading" align="center">
+				<h3 class="panel-title">管理者一覧</h3>
+			</div>
+		
+			<table class="table table-striped table-condensed table-bordered">
+				<thead>
+					<tr>
+					<th style="width: 70px;"><input type="checkbox"/>全選択</th>
+						<th style="width: 160px;">事業部</th>
+						<th >ESQID</th>
+						<th  style="width: 160px;">管理者</th>
+					</tr>
+				</thead>
+				</table>
+<div style="overflow-y:scroll;height:450px;">
+				<table class="table table-striped table-condensed table-bordered">
+				<tbody>
+					<tr>
+					<td class="sp-va-m"  style="width: 70px;"><div align="center"><input type="checkbox"/></div></td>
+					<td class="sp-va-m" style="width: 160px;">コミュニケーションIT<span></span></td>
+					<td class="sp-va-m" style="width: 108px;">9876<span></span></td>
+						<td class="sp-va-m">山田太郎<span></span></td>
+					
+					</tr>
+					<tr>
+					<td class="sp-va-m"  style="width: 70px;"><div align="center"><input type="checkbox"/></div></td>
+					<td class="sp-va-m" style="width: 160px;">コミュニケーションIT<span></span></td>
+					<td class="sp-va-m" style="width: 108px;">1111<span></span></td>
+						<td class="sp-va-m">山田花子<span></span></td>
+					
+					</tr>
+				</tbody>
+			</table><br/>
+
+		</div>
+		<!-- /panel -->
+	</div>
+	</div>
+	
+	<div class="sp-fixed-sidenav"
+		style="position: absolute; top: 100px; left: 720px; width: 500px;"><!-- top: 150px; left: 680px; -->
+	<div class="panel sp-panel-default" data-sp-toggle="panel">
+            <div class="panel-heading" tabindex="0">
+              <div class="row">
+                <div class="col-xs-3">
+                  <h2 class="panel-title"><i class="fa fa-fw fa-caret-down"></i>&nbsp;絞り込み検索</h2>
+                </div><!-- /col-xs-8 -->
+                <div class="col-xs-9 sp-ta-r sp-text-additional">
+                  <strong>条件　</strong>名前の指定内容／ESQIDの指定内容／事業部の指定内容
+                </div><!-- /col-xs-4 -->
+              </div>
+            </div>
+	
+	  <div class="sp-iobox sp-iobox-h">
+              <table class="table">
+                <tbody><tr>
+                  <th class="sp-iobox-label-area sp-label-container">
+                    <div class="sp-label-container">
+                      <label class="sp-text-secondary" for="textbox01">名前</label>
+                      <span class="label label-default"><small>任意</small></span>
+                    </div>
+                  </th>
+                  <td>
+                    <input class="form-control" type="text" id="textbox01"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="sp-iobox-label-area sp-label-container">
+                    <div class="sp-label-container">
+                      <label class="sp-text-secondary" for="textbox01">ESQID</label>
+                      <span class="label label-default"><small>任意</small></span>
+                    </div>
+                  </th>
+                  <td>
+                    <input class="form-control" type="text" id="textbox01"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th class="sp-iobox-label-area sp-label-container">
+                    <div class="sp-label-container">
+                      <label class="sp-text-secondary">事業部</label>
+                      <span class="label label-default"><small>任意</small></span>
+                    </div>
+                  </th>
+                  <td class="form-inline">
+                    <select class="form-control" id="selectbox01">
+                    <option selected="selected">――――――――――――――――――――</option>
+                    <option>2020テクノロジー＆ビジネス開発室</option>
+                    <option>経営企画本部</option>
+                    <option>管理本部</option>
+                    <option>戦略ビジネス推進本部</option>
+                    <option>グローバル・ビジネス開発本部</option>
+                    <option>金融ソリューション事業部</option>
+                    <option>ビジネスソリューション事業部</option>
+                    <option>エンジニアリングソリューション事業部</option>
+                    <option>オートモティブ事業部</option>
+                    <option>コミュニケーションIT事業部</option>
+                  </select>
+                  </td>
+                </tr>
+              </tbody></table>
+              
+            </div><!-- /sp-iobox -->
+            <div class="well well-sm sp-ta-c">
+              <a href="UC2-2-2.html" role="button" class="btn btn-default sp-w250"><b>この条件で検索</b></a>
+            </div>
+         <div class="sp-fixed-sidenav"
+		style="background-color: #ffffff; width:100%;">
+		<div class="panel sp-panel-default">
+			<div class="panel-heading"  align="center">
+				 <h3 class="panel-title">追加候補者一覧</h3>
+			</div>
+			<table class="table table-striped table-condensed table-bordered">
+				<thead>
+					<tr>
+					<th style="width: 70px;"><input type="checkbox"/>全選択</th>
+						<th style="width: 160px;">事業部</th>
+						<th >ESQID</th>
+						<th style="width: 160px;">名前</th>
+					</tr>
+				</thead>
+				</table>
+<div style="overflow-y:scroll;height:185px;">
+				<table class="table table-striped table-condensed table-bordered">
+				<tbody>
+					<tr>
+					<td class="sp-va-m" style="width: 70px;"><div align="center"></div></td>
+					<td class="sp-va-m" style="width: 160px;"></td>
+					<td class="sp-va-m" style="width: 106px;"></td>
+						<td class="sp-va-m"></td>
+					</tr>
+					
+				</tbody>
+			</table><br/>
+
+		</div>
+			
+			<br/>
+
+		</div>
+
+		</div>
+		<!-- /panel -->
+
+    </div>
+                
+</div><!-- top: 150px; left: 680px; -->
+       <div class="sp-fixed-sidenav"
+		style="position: absolute; top: 250px; left: 597px; width: 10%;">
+		 <a href="UC2-2-1.html" role="button" class="btn btn-primary sp-w100"><b>→</b></a>
+		</div>
+		<div class="sp-fixed-sidenav"
+		style="position: absolute; top: 350px; left: 595px; width: 10%;">
+		 <a href="UC2-2-3.html" role="button" class="btn btn-primary sp-w100"><b>←</b></a>
+		</div>
+	<div align="center" style="position: absolute; top: 650px;left: 460px;">
+		<a href="/enquete/config" role="button" class="btn btn-default sp-m5"><b>　　戻る　　</b></a>
+        <a href="/enquete/config" role="button" class="btn btn-primary sp-m5"><b>　　確定　　</b></a>
+	</div>
+	<script src="../js/jquery-1.11.3.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/sparkplug.js"></script>
+	<script src="../js/jquery.placeholder.js"></script>
+
+
+</body>
+</html>

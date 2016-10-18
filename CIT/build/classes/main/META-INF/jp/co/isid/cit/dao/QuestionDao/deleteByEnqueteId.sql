@@ -1,0 +1,1 @@
+delete QUESTION where enquete_id = /*enqueteId*/1

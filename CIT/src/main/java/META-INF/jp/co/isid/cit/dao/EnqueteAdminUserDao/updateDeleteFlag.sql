@@ -1,0 +1,1 @@
+UPDATE ENQUETE_ADMIN_USER SET DELETE_FLAG = 1 where enquete_id = /*enqueteId*/1

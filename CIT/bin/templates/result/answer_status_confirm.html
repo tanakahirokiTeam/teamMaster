@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="ja" class="ie6 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="ja" class="ie7 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="ja" class="ie8 ielt10 ielt9"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="ja" class="ie9 ielt10"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--><!-- <html lang="ja">  --> <!--<![endif]-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http:www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>回答状況確認</title>
+	<meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <link rel="stylesheet" type="text/css" href="../css/sparkplug.css" />
+    <link rel="stylesheet" type="text/css" href="../css/common.css" />
+</head>
+<body class="sp-with-navbar">
+  <div class="navbar navbar-inverse navbar-fixed-top sp-navbar" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+		<a href="#" class="navbar-brand">
+		<i class="fa fa-cloud"></i> <b>アンケートシステム</b>
+		</a>
+	</div><!-- /navbar-header -->
+	<ul class="nav navbar-nav">
+	<li><a href="#">メニュー</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+	<li class="dropdown">
+	<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+	<i class="fa fa-user"></i>ESQID:9876 山田 太郎 <b class="caret"></b></a></li>
+	<li><a href="login">ログアウト</a></li>
+	</ul>
+	</div><!-- /container-fluid -->
+	</div><!-- /navbar -->
+	
+    <div class="container-fluid" id="pagetop">
+    	<h2>2016年度定期健診アンケート 回答状況確認画面</h2>
+          <div class="sp-datagrid">
+            <div class="row">
+              <div class="col-xs-8">
+                <form class="form-inline">
+                  <ul class="nav nav-pills sp-nav-pills-alt">
+                    <li class="active"><a href="#">全体集計</a></li>
+                    <li><a href="UC4-1-2.html">回答者一覧</a></li>
+                    <li><a href="UC4-1-3.html">未回答者一覧</a></li>
+                  </ul>
+                </form>
+              </div><!-- /col-xs-8 -->
+
+              <div class="col-xs-4">
+                <form class="form-inline sp-ta-r">
+                
+                </form>
+              </div>
+            </div>
+  
+ 		<h3>■事業部別回答率</h3>           
+			<table class="table">
+            <thead>
+              <tr>
+                <th style="width: 350px;">事業部</th>
+                <th style="width: 100px;">回答者数（人）</th>
+                <th style="width: 100px;">総数（人）</th>
+                <th style="width: 100px;">回答率（％）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="sp-va-m">コミュニケーションIT事業部</td>
+                <td class="sp-va-m">70</td>
+                <td class="sp-va-m">86</td>
+                <td class="sp-va-m">90</td>               
+              </tr>
+              <tr>
+                <td class="sp-va-m">金融事業部</td>
+                <td class="sp-va-m">3</td>
+                <td class="sp-va-m">20</td>
+                <td class="sp-va-m">15</td>   
+              </tr>
+              <tr class="sp-va-m1">
+                <td class="sp-va-m1">全体</td>
+                <td class="sp-va-m1">73</td>
+                <td class="sp-va-m1">106</td>
+                <td class="sp-va-m1">65</td>   
+              </tr>
+            </tbody>
+            </table>
+                        
+		<h3> ■設問項目別回答率</h3>
+		<table class="table">
+        <tr>
+			<td class="num">質問1   【択一】<span class="label label-danger">必須</span> </td>
+			<td class="contents">朝食を食べていますか？</td>
+		</tr>
+		</table>
+                <table class="table">
+              <tr>
+				<th style="width: 1px;"></th>
+                <th style="width: 50px;">質問項目</th>
+                <th style="width: 10px;">回答者数（人）</th>
+                <th style="width: 10px;">総数（人）</th>
+                <th style="width: 10px;">回答率（％）</th>
+              </tr>
+            <tbody>
+              <tr>
+				<td class="sp-va-m">1</td>
+                <td class="sp-va-m">毎日食べる</td>
+                <td class="sp-va-m">70</td>
+                <td class="sp-va-m">86</td>
+                <td class="sp-va-m">90</td>               
+              </tr>
+              <tr>
+              	<td class="sp-va-m">2</td>
+                <td class="sp-va-m">時々食べる</td>
+                <td class="sp-va-m">3</td>
+                <td class="sp-va-m">20</td>
+                <td class="sp-va-m">15</td>   
+              </tr>
+              <tr>
+				<td class="sp-va-m">3</td>
+                <td class="sp-va-m">ほとんど食べない</td>
+                <td class="sp-va-m">73</td>
+                <td class="sp-va-m">106</td>
+                <td class="sp-va-m">65</td>   
+              </tr>
+            </tbody>
+            </table>
+            
+            　　　　　　<br/>
+            <table class="table">
+            <tr>
+            <td class="num">質問2   【複数選択】</td>   
+			<td class="contents">質問1で「ときどき食べている」「ほとんど食べない」と答えた方のみ：<br/>
+				あなたが朝食を食べない理由として当てはまるものをすべてチェックしてください。</td>
+			</tr>
+			</table>
+			<table class="table">
+              <tr>
+				<th style="width: 1px;"></th>
+                <th style="width: 50px;">質問項目</th>
+                <th style="width: 10px;">回答者数（人）</th>
+                <th style="width: 10px;">総数（人）</th>
+                <th style="width: 10px;">回答率（％）</th>
+              </tr>
+            <tbody>
+              <tr>
+				<td class="sp-va-m">1</td>
+                <td class="sp-va-m">食べる習慣がないから</td>
+                <td class="sp-va-m">70</td>
+                <td class="sp-va-m">86</td>
+                <td class="sp-va-m">90</td>               
+              </tr>
+              <tr>
+              	<td class="sp-va-m">2</td>
+                <td class="sp-va-m">その他</td>
+                <td class="sp-va-m">3</td>
+                <td class="sp-va-m">20</td>
+                <td class="sp-va-m">15</td>   
+              </tr>
+            </tbody>
+            </table>
+			<br/>
+			<table class="table">
+			<tr>
+			<td class="num">質問3   【自由記述】</td>
+			<td class="contents">質問2で「その他」をチェックした方のみ：<br/>理由を具体的にお書きください。</td>
+ 			</tr>
+ 			</table>
+ 			<br/>
+ 				・食べるとおなかが痛くなる<br/>
+              	・朝食を食べないほうが健康によいと効いた<br/>
+				・朝ごはんがよく分からない<br/><br/>                        
+
+           <!--  <div class="row">
+              <div class="col-xs-4">
+                <p class="sp-table-results"><strong>118</strong> 件中 1 - 20</p>
+              </div>/col-xs-4
+              <div class="col-xs-8 sp-ta-r">
+                <ul class="pagination pagination-sm">
+                  <li class="disabled"><a data-toggle="tooltip" data-placement="top" title="前へ"><i class="fa fa-angle-left"></i></a></li>
+                  <li class="active"><a href="javascript:void(0);">1</a></li>
+                  <li><a href="javascript:void(0);">2</a></li>
+                  <li><a href="javascript:void(0);">3</a></li>
+                  <li><a href="javascript:void(0);">4</a></li>
+                  <li><a href="javascript:void(0);">5</a></li>
+                  <li class="sp-pagination-ellipsis"><span>...</span></li>
+                  <li><a href="javascript:void(0);">33</a></li>
+                  <li><a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="次へ"><i class="fa fa-angle-right"></i></a></li>
+                </ul>/pagination
+              </div>/col-xs-8
+            </div> -->
+          </div><!-- /sp-datagrid -->
+
+        </div><!-- /sp-maincontent -->
+<div  align="center">
+			<a href="/menu" role="button" class="btn btn-default sp-m5"><b>メニューへ戻る</b></a>
+			</div>
+		<br/><br/>
+
+
+    <div class="sp-btn-sticky-bottom"><a href="#pagetop"><i class="fa fa-angle-up"></i>ページの先頭へ</a></div>
+
+    <script src="../js/jquery-1.11.3.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/sparkplug.js"></script>
+    <script src="../js/jquery.placeholder.js"></script>
+
+  </body>
+</html>

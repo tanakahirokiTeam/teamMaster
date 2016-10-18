@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="ja" class="ie6 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="ja" class="ie7 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="ja" class="ie8 ielt10 ielt9"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="ja" class="ie9 ielt10"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <html lang="ja"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sparkplug, UI Templates for Enterprise Web Apps</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="css/sparkplug.css">
+    <style>
+      body {
+        padding-top: 30px; /* 60px to make the container go all the way to the bottom of the topbar */
+        background-color: /*#f5f7fa*/ #f8f8f8!important;
+      }
+      .sp-navbar-docs { background: #FFF; }
+      #home-hero {
+        background: #6c7890 /*#8ce254*/;
+        color: #fff;
+        text-align: center;
+        padding: 60px 0 20px;
+        margin-bottom: 0;
+      }
+
+      #logo {
+        margin-bottom: 30px;
+      }
+
+      #home-hero .lead {
+        font-size: 17px;
+        font-weight: bold;
+        color: #f5f5ff;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+        margin: 40px auto 0;
+      }
+
+      #homecontent h2,
+      #homecontent .col-xs-4 {
+        font-weight: normal;
+        text-align: center;
+        color: rgb(40,40,40);
+      }
+
+      #homecontent h2 {
+        font-size: 32px;
+      }
+
+      #homecontent h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      h2, h3 {
+        text-shadow: 0 -1px 0 rgba(0,0,0,.1), 0 2px 1px rgba(255, 255, 255, 1);
+      }
+
+      #homecontent .lead {
+        opacity: .5;
+        margin-top: -3px;
+      }
+
+      #homecontent .col-xs-4 p {
+        text-align: justify;
+        text-justify: inter-ideograph;
+      }
+
+      .pictogram {
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+
+      .pictogram i {
+        text-align: center;
+        display: block;
+        font-size: 80px;
+        line-height: 100px;
+        color:  #6c7890 /*#8ce254*/;
+        text-shadow: 0 -1px 0 rgba(81, 163, 81,.7), 0 1px 1px rgba(255, 255, 255, 1);
+        font-style: normal;
+      }
+
+      .browser {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .browser img {
+        width: 90px;
+      }
+      .browser-fx img {
+        width: 97px;
+      }
+      .browser-ie img {
+        width: 98px;
+      }
+
+      #dlbtn-wrapper {
+        background: #fff;
+        margin: 0px auto 80px;
+        border-bottom: 1px solid #dde7dd;
+      }
+      #downloadbutton {
+        padding: 16px 40px;
+        margin: 20px auto;
+      }
+
+      hr {
+        border-top-color: rgba(0,0,0,.12)!important;
+        margin: 60px 0!important;
+      }
+
+      .ie9 .gradient {
+        filter: none;
+      }
+
+      .ie-notice {
+        margin-top: 20px;
+        font-size: 10px;
+      }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top sp-navbar sp-navbar-docs" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Sparkplug</a>
+        </div><!-- /navbar-header -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="getting-started.html">つかいかた</a></li>
+            <li><a href="page-templates.html">ページテンプレート</a></li>
+            <li><a href="components.html">コンポーネント</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="themes.html">テーマ</a></li>
+            <li><a href="http://katanuki/" data-toggle="tooltip" data-placement="bottom" title="Sparkplugを使った画面を簡単な操作で生成できるジェネレータ" target="_blank">Katanuki <i class="fa fa-external-link-square"></i></a></li>
+          </ul>
+        </div><!-- /navbar-collapse -->
+      </div><!-- /container -->
+    </div><!-- /navbar -->
+
+    <div id="home-hero">
+      <h1 id="logo">
+        <object data="img/logo.svg" type="image/svg+xml" width="659" height="190" title="Sparkplug">
+          <img src="img/logo.png" width="659" height="190" alt="Sparkplug">
+        </object>
+      </h1>
+      <p class="lead">スパークプラグ： 業務Webアプリケーション向けUIテンプレート集</p>
+      <p class="sp-mt10 text-muted">v2.0.0 WIP</p>
+    </div>
+
+    <p id="dlbtn-wrapper" class="sp-ta-c"><a id="downloadbutton" class="btn btn-default btn-lg" href="mailto:g-uidesign@group.isid.co.jp" role="button"><i class="fa fa-envelope-o"></i> <b>開発技術部に Sparkplug のリクエストメールを送る</b></a></p>
+
+    <div class="container" id="homecontent">
+
+      <h2>UI設計担当のあなたが、Sparkplug を使うべき3つの理由。</h2>
+      <p class="lead sp-ta-c">HTML/CSS/JSの専門知識は不要。コピペで簡単に高品質なUIが作れます。</p>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p class="pictogram">
+            <i class="fa fa-copy"></i>
+          </p>
+          <h3>かんたん・キレイ</h3>
+          <p><a href="page-templates.html">ページテンプレート</a>を選んだら、<a href="components.html">コンポーネント</a>ページから必要なUIパーツのソースをコピペするだけで画面が完成。</p>
+          <p>ブラウザベースの画面モックを、すぐお客様に提示できます。</p>
+          <!-- p>Sparkplug ベースの画面ジェネレーター <a href="http://10.0.5.53/katanuki" target="_blank">Katanuki <i class="fa fa-external-link-square"></i></a> では、リアルタイムで画面に配置するコンポーネントを編集可能。完成したUIは、すぐにHTMLファイルとしてダウンロードできます。</p -->
+        </div>
+
+        <div class="col-xs-4">
+          <p class="pictogram">
+            <i class="fa fa-group"></i>
+          </p>
+          <h3>ブレない</h3>
+          <p>Sparkplug という基本ルールがあることで、複数のメンバーがUI設計に関わる場合でもレイアウトや見栄えの一貫性を維持できます。</p>
+          <p>ログイン、検索、編集などの<a href="page-templates.html#h_examples">サンプル画面</a>を活用すれば「機能はほぼ同じなのに、作成するメンバーによって見た目が全然違う」といった問題も回避しやすくなります。</p>
+        </div>
+
+        <div class="col-xs-4">
+          <p class="pictogram">
+            <i class="fa fa-wrench"></i>
+          </p>
+          <h3>実装に使える</h3>
+          <p>Sparkplug は、CSSフレームワークのデファクトスタンダード <a href="http://getbootstrap.com/">Bootstrap</a> をベースに開発されています。HTMLやJSのコードはシンプル＆セマンティックなので、画面モックをそのまま実装に利用できます。</p>
+          <p>また、パーツのレイアウトや見た目をちょっと変更したくなった場合は、Bootstrap の知識をそのまま活用できます。</p>
+
+          <p></p>
+        </div>
+      </div>
+
+      <hr>
+      <h2>こんな場面で Sparkplug が活躍。</h2>
+      <p class="lead sp-ta-c">提案から上流工程にいたるまで、UIに関わるすべての作業が効率アップします。</p>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <h3>提案フェーズ</h3>
+          <p>「お客様への営業提案時に綺麗なUIサンプルを提示したいが、作れる人がいない」</p>
+          <p>Sparkplug を使えば、営業担当のあなた自身がUIサンプルを作成・提案できます。デザインカンプ作成を外部制作会社に依頼する必要はありません。</p>
+        </div>
+
+        <div class="col-xs-4">
+          <h3>要件定義フェーズ</h3>
+          <p>「できるだけ早く『紙芝居』をお客様に提示してUIの合意を得たい」「線画だと画面イメージが正確に伝わらない」</p>
+          <p>Sparkplug ならブラウザで動くリアルな画面モックがすぐ完成。UIの意図がお客様にはっきりと伝わります。<br>Powerpoint や Excel の線画から“完成予想図”を思い描いてもらう必要はもうありません。</p>
+        </div>
+
+        <div class="col-xs-4">
+          <h3>基本設計フェーズ</h3>
+          <p>「お客様からUI設計指針の提出を求められたが、書ける人がいない、書く工数がない」</p>
+          <p>Sparkplug で提供しているページテンプレートやコンポーネントの振る舞いを定義した「UIデザインガイドライン」を今後公開予定。Sparkplug ベースのUI設計指針を、最小限の手間でお客様と共有できます。</p>
+        </div>
+      </div>
+
+      <hr>
+      <h2>いまどきのメジャーなブラウザに対応。</h2>
+      <p class="lead sp-ta-c">Windows7 以上または Mac OSX 環境の以下のブラウザで、美しく見栄えの整ったUIを実現します。</p>
+
+      <div class="row">
+        <div class="col-xs-3">
+          <p class="sp-ta-c sp-mt10 sp-pt10">Chrome 27+</p>
+          <p class="browser browser-cr">
+            <img src="img/browser-chrome.png" width="90" height="90" alt="">
+          </p>
+
+        </div>
+        <div class="col-xs-3">
+          <p class="sp-ta-c sp-mt10 sp-pt10">Firefox 21+</p>
+          <p class="browser browser-fx">
+            <img src="img/browser-firefox.png" width="97" height="97" alt="">
+          </p>
+
+        </div>
+        <div class="col-xs-3">
+          <p class="sp-ta-c sp-mt10 sp-pt10">Safari 6+</p>
+          <p class="browser browser-sf">
+            <img src="img/browser-safari.png" width="90" height="90" alt="">
+          </p>
+
+        </div>
+        <div class="col-xs-3">
+          <p class="sp-ta-c sp-mt10 sp-pt10">IE 8+ <span class="additional">*</span></p>
+          <p class="browser browser-ie">
+            <img src="img/browser-ie.png" width="98" height="98" alt="">
+          </p>
+
+        </div>
+      </div>
+
+      <p class="ie-notice sp-text-additional sp-ta-c">* IE8とIE9ではCSS3プロパティで実現している装飾の一部は省略されます（角丸や文字の周りの影など）</p>
+
+    </div><!-- コンテンツエリア -->
+
+    <hr class="sp-mb0">
+    <div class="sp-footer sp-skeleton sp-mt0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-4">
+            <ul class="list-inline inline-divided sp-text-secondary sp-mt10">
+              <li><a href="release-notes.html">リリースノート</a></li>
+              <li><a href="terms-of-use.html">利用規約</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-8">
+            <p class="pull-right sp-ta-r sp-text-additional">
+              &copy; Information Services International-Dentsu, Ltd.<br>
+              Designed and built by ISID System Technologies Dept. Technology Headquarters.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sp-btn-sticky-bottom"><a href="#pagetop"><i class="fa fa-angle-up"></i>ページの先頭へ</a></div>
+    <!-- 画面下端にはりつく「ページの先頭へ」ボタン -->
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/sparkplug.js"></script>
+  </body>
+</html>

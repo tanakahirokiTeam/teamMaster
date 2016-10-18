@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="ja" class="ie6 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="ja" class="ie7 ielt10 ielt9 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="ja" class="ie8 ielt10 ielt9"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="ja" class="ie9 ielt10"> <![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!--> <html lang="ja"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>リリースノート | Sparkplug</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="css/sparkplug.css">
+    <style>
+      body { padding-top: 60px; /* 60px to make the container go all the way
+      to the bottom of the topbar */ }
+      h2 { padding-top: 0; }
+      .sp-navbar-docs { background: #FFF; }
+      .page-header + h3 { padding-top: 0!important; }
+      .lead { line-height: 1.6; }
+      #subhero {
+        padding: 46px 0 33px;
+        margin: -20px 0 30px;
+        background: /* #8ce254 */ #aaa;
+        /* border-bottom: 1px solid #7ad03c; */
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+        font-weight: bold;
+      }
+      #subhero h1 {
+        color: #FFF;
+        font-weight: normal;
+        font-size: 48px;
+        margin-top: 0;
+      }
+      #subhero .lead {
+        color: #f5f5ff;
+        font-weight: bold;
+        font-size: 17px;
+      }
+      /* .tabbable { margin-top: 25px; } */
+      .tab-pane h3 { padding-top: 0; margin-top: 0; }
+      .nav-tabs li { font-weight: bold; }
+      .datagrid td { font-size: 12px; }
+      hr { margin: 40px 0; }
+      .tabbable .tab-content { margin: 40px 0 0; }
+      #known-issues .sp-bordered-transparent { margin-top: 15px; margin-bottom: 15px; }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top sp-navbar sp-navbar-docs" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">Sparkplug</a>
+        </div><!-- /navbar-header -->
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="getting-started.html">つかいかた</a></li>
+            <li><a href="page-templates.html">ページテンプレート</a></li>
+            <li><a href="components.html">コンポーネント</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+            <li><a href="themes.html">テーマ</a></li>
+            <li><a href="http://katanuki/" data-toggle="tooltip" data-placement="bottom" title="Sparkplugを使った画面を簡単な操作で生成できるジェネレータ" target="_blank">Katanuki <i class="fa fa-external-link-square"></i></a></li>
+          </ul>
+        </div><!-- /navbar-collapse -->
+      </div><!-- /container -->
+    </div><!-- /navbar -->
+
+    <div id="subhero">
+      <div class="container">
+        <h1>リリースノート</h1>
+        <p class="lead">バージョンごとの変更点と、既知の問題／追加予定の機能。</p>
+      </div>
+    </div>
+
+    <div class="container" id="pagetop">
+
+      <div class="tabbable">
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#release-notes" data-toggle="tab">リリースノート</a></li>
+          <li><a href="#known-issues" data-toggle="tab">既知の問題／追加予定の機能</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="release-notes" class="tab-pane active">
+            <div class="page-header">
+              <h2>バージョン 2.0.0 WIP　<small>2014/07/10 リリース</small></h2>
+            </div>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-va-m text-center sp-text-additional sp-p10">
+                      （リリースノート省略）
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <h3>使用しているOSSのバージョン</h3>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-default">CSS</span> <span class="label label-default">JS</span></td>
+                    <td class="sp-va-m"><a href="http://getbootstrap.com/">Bootstrap</a></td>
+                    <td class="sp-va-m" style="width: 120px;">v3.3.5</td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-default">CSS</span></td>
+                    <td class="sp-va-m"><a href="http://fortawesome.github.io/Font-Awesome/">Font-Awesome</a></td>
+                    <td class="sp-va-m">v4.3.0</td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-default">JS</span></td>
+                    <td class="sp-va-m"><a href="http://jquery.com">jQuery</a></td>
+                    <td class="sp-va-m">v1.11.3</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <hr class="sp-bordered-transparent">
+
+            <div class="page-header">
+              <h2>バージョン 1.1.0　<small>2014/07/08 リリース</small></h2>
+            </div>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-info">追加</span></td>
+                    <td class="sp-va-m">
+                      テンプレートの色合いや見栄えを簡単に変えるための<a href="themes.html">テーマ</a>のスタイルとサンプルを追加しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-info">追加</span></td>
+                    <td class="sp-va-m">
+                      以下のコンポーネントを追加しました。
+                      <!-- datagrid =============================================================================== -->
+                      <div class="sp-datagrid sp-m10">
+                        <table class="table table-striped table-condensed table-bordered">
+                          <tbody>
+                            <tr>
+                              <td>データグリッドのソート可能な列スタイル</td>
+                              <td><code>.col-sortable</code> <code>.col-sorted</code></td>
+                            </tr>
+                            <tr>
+                              <td>タイトルボックスの透明スタイル</td>
+                              <td><code>.titledbox-transparent</code></td>
+                            </tr>
+                            <tr>
+                              <td>Pillの別スタイル</td>
+                              <td><code>.nav-pills-alt</code></td>
+                            </tr>
+                            <tr>
+                              <td>外周ボーダー付きタブ</td>
+                              <td><code>.tab-bordered</code> <code>.tab-bordered-alt</code></td>
+                            </tr>
+                            <tr>
+                              <td>タブの入れ子</td>
+                              <td><code>.tab-nested</code></td>
+                            </tr>
+                            <tr>
+                              <td>リストビルダー</td>
+                              <td><code>.table-scrollable</code></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- datagrid =============================================================================== -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-info">追加</span></td>
+                    <td class="sp-va-m">
+                      sparkplug.jsに<a href="javascript.html#h_datagrid">データグリッドの行選択機能拡張</a>を追加しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      以下のコンポーネントのスタイルを調整しました。
+                      <ul class="sp-mt10">
+                        <li>タイトルボックスの一部のボーダーや背景色</li>
+                        <li>文章用スタイル <code>.additional</code> <code>.secondary</code> に下部余白（margin-bottom）を追加</li>
+                      </ul>
+                      この変更にともない、v1.0.4以前に作成した画面モックの一部で表示が変化する場合があります。その場合、次のように対応してください。
+                      <ul class="sp-mt10">
+                        <li>文章用スタイルの下部に不要な余白が発生している場合は、要素に <code>.mb0</code> を追加して調整してください。</li>
+                        <li>input, textarea, selectなどのフォーム要素が縦に並んでいる箇所で要素同士がくっついて見える（要素間の上下の余白がゼロになっている）場合、下の要素に <code>.mt10</code> を追加して調整してください。</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      v1.0.4以前で、データグリッドを単独で使う際のボーダー表示調整に使われていた <code>.table-front</code>, <code>.table-rear</code>クラスを削除し、クラス未指定でも自動的に見栄えが整うよう調整しました。<br>
+                      今後 <code>.table-front</code>, <code>.table-rear</code> の記述は不要ですが、（v1.0.4以前に作成した画面モックなどで）html上にクラス指定が残っていても、表示上の支障はありません。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      サンプル画面の構成と内容を見直しました。
+                      <ul class="sp-mt10">
+                        <li>サンプル画面（一覧）の配置コンポーネントを拡充</li>
+                        <li>サンプル画面（編集）の配置コンポーネントを拡充</li>
+                        <li>サンプル画面から「サブヘッダー常時固定版」を削除</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      Bootstrapを v2.2.2 から v2.3.2（2系の最終バージョン） にバージョンアップしました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      Font-Awesomeを v3.0.2 から v3.2.1（3系の最終バージョン） にバージョンアップしました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      jQueryを v1.10.2 から v1.11.1（1系の最新バージョン） にバージョンアップしました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">
+                      IE8-9がautofocus/placeholder属性に対応していない問題を<a href="javascript.html#h_polyfill">Polyfill（jquery.placeholder.js）</a>の導入で解消しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">
+                      IE8において、データグリッド最終行のtd下端にボーダーが表示されない問題を解消しました。
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <h3>使用しているOSSのバージョン</h3>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-default">CSS</span> <span class="label label-default">JS</span></td>
+                    <td class="sp-va-m"><a href="http://twitter.github.io/bootstrap/">Bootstrap</a></td>
+                    <td class="sp-va-m" style="width: 120px;">v2.3.2</td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-default">CSS</span></td>
+                    <td class="sp-va-m"><a href="http://fortawesome.github.io/Font-Awesome/3.2.1/">Font-Awesome</a></td>
+                    <td class="sp-va-m">v3.2.1</td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-default">JS</span></td>
+                    <td class="sp-va-m"><a href="http://jquery.com">jQuery</a></td>
+                    <td class="sp-va-m">v1.11.1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <hr class="sp-bordered-transparent">
+
+            <div class="page-header">
+              <h2>バージョン 1.0.4　<small>2014/02/05 リリース</small></h2>
+            </div>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-info">追加</span></td>
+                    <td class="sp-va-m">
+                      余白微調整用のユーティリティスタイル（.p*5, .m*5）を追加しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      jQueryを v1.8.3 から v1.10.2 にバージョンアップしました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">
+                      タイトルボックス、通知、モーダル等に使われている「×」アイコンボタンの表示位置とサイズを調整しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">
+                      IE8で、開閉可能なタイトルボックスを閉じた際に余白が消えてしまう問題を修正しました。
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <hr class="sp-bordered-transparent">
+
+            <div class="page-header">
+              <h2>バージョン 1.0.3　<small>2013/08/16 リリース</small></h2>
+            </div>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-info">追加</span></td>
+                    <td class="sp-va-m">
+                      行選択データグリッドに、一括実行アクションエリア（選択された行に対する一括実行アクションボタンを配置するための領域）を追加しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-info">追加</span></td>
+                    <td class="sp-va-m">
+                      Sparkplug の利用規約を追加しました。これは Sparkplug の提供を受けたお客さま・協力会社のみなさまに向けたもので、Sparkplugを使用するには本規約への同意が必須となります。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">修正</span> <span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      コンポーネントのHTMLソース表示等に使用しているシンタックスハイライト用JSプラグインを、SyntaxHighlighter から CodeMirror  に変更しました。これにより、HTMLソースのペースト時にスタイル崩れが起きる問題を解消しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">
+                      アイコン付きのエラーメッセージ（.list-with-icon）をより読みやすくするため、2行目以降に付けられているインデントを調整しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">
+                      アイコンボタン（.btn-icon-*）の表示を改善しました。
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <hr class="sp-bordered-transparent">
+
+            <div class="page-header">
+              <h2>バージョン 1.0.2　<small>2013/07/17 リリース</small></h2>
+            </div>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      Sparkplugダウンロードパッケージ（Zipファイル）の構成を変更し、Sparkplugを使うための情報をdocsフォルダに分離しました。<br>画面モックの作成には、docsフォルダを<b>除いた</b>フォルダ／ファイル一式をお使いください。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      コンポーネントのHTMLソース表示等に使用しているシンタックスハイライト用JSプラグインを、Google Code Prettify から SyntaxHighlighter に変更しました。これにより、IE8,9以外のブラウザでは、ダブルクリックでHTMLソースを全選択できるようになりました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">
+                      すべてのドキュメントの改行コードをLFからCR+LFに変更しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">
+                      サブヘッダー常時固定版／横幅可変／1カラムのページテンプレート（_template_fixed_sp-subnav_fluid_1col.html）において、コンテンツエリア上部に不必要な余白が入っていた問題を修正しました。
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <hr class="sp-bordered-transparent">
+
+            <div class="page-header">
+              <h2>バージョン 1.0.1　<small>2013/06/13 リリース</small></h2>
+            </div>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">
+                      テンプレートとその他のページで別々のjsファイルを読み込んでいた（テンプレートでは結果的にjsファイルの読み込みに失敗していた）問題を修正し、全ページで非minify版のjsファイルを読み込むよう統一しました。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">
+                      「ページの先頭へ」ボタンが .fixed-sidenav の下に隠れてしまう問題を修正しました。
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <hr class="sp-bordered-transparent">
+
+            <div class="page-header">
+              <h2>バージョン 1.0.0　<small>2013/06/03 リリース</small></h2>
+            </div>
+            <h3>先行配布バージョンからの変更点</h3>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><!-- span class="label label-info">追加</span --><span class="label label-success">修正</span> <span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">Webkit以外のブラウザでI/Oボックスに.skeletonクラスを指定した際、行マージしたセルの右側にあるセルの一部で左ボーダーが表示されなくなる問題を修正しました。<br>
+                    これにともない、.skeletonクラス指定時の表示を次のように変更しました。<br>
+                    .iobox-hまたは.iobox-vとの組み合わせによっては不要な縦ボーダー／横ボーダーが表示される場合があるため、確認が必要です。
+                      <ul class="sp-mt10">
+                        <li><b>新</b>：.iobox-hで使うとテーブルの<b>上下端をのぞく</b>横方向の区切り線を表示、.iobox-vで使うとテーブルの<b>左右端を含む</b>縦方向の区切り線を表示</li>
+                        <li>旧：上下左右端をのぞく、テーブル内部の縦横ボーダーを表示</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">追加</span --><span class="label label-warning">変更</span></td>
+                    <td class="sp-va-m">ページテンプレートの構成をシンプルにするため、使い勝手の悪い「Bootstrap標準の.span*で幅指定したサイドバー」付きテンプレート計8ページを削除しました。
+                      <div class="row mt10">
+                        <div class="col-xs-6">
+                          <ul>
+                            <li>_template_fixed_sp-subnav_fixed_2col_l.html</li>
+                            <li>_template_fixed_sp-subnav_fixed_2col_r.html</li>
+                            <li>_template_fixed_sp-subnav_fluid_2col_l.html</li>
+                            <li>_template_fixed_sp-subnav_fluid_2col_r.html</li>
+                          </ul>
+                        </div>
+                        <div class="col-xs-6">
+                          <ul>
+                            <li>_template_standard_fixed_2col_l.html</li>
+                            <li>_template_standard_fixed_2col_r.html</li>
+                            <li>_template_standard_fluid_2col_l.html</li>
+                            <li>_template_standard_fluid_2col_r.html</li>
+                          </ul>
+                        </div>
+                      </div><!-- /row -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">Bootstrap標準のスタイル.btn-linkが正常に表示されない問題を修正しました。</td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">サンプル画面「ポータル」でのタイトルボックスの表示不具合を修正しました。</td>
+                  </tr>
+
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IEにおけるヘッダーの.brandテキストの表現を向上しました。</td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IEで入力コントロールおよびselect要素のラベルがメイリオで表示されない問題を修正しました。</td>
+                  </tr>
+
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IE8,9でタイトルボックスの「タイトルが白」スタイルが適用されない問題を修正しました。</td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IE8,9でモーダルの「キャンセル」リンクが右寄せ表示される問題を修正しました。</td>
+                  </tr>
+
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IE9で「ページの先頭へ」リンクの折り返しが発生する問題を修正しました。</td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IE8でタイトルボックスの「枠線の別スタイル」が正常に表示されない問題を修正しました（デフォルトスタイルで表示されるように変更）。</td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IE8でデフォルトボタンと.wellの背景色が似通っていて見にくい問題を修正しました。</td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IE8のopacity非対応に起因する表示上の問題を修正しました。</td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IE8のrgba色指定非対応に起因する表示上の問題を修正しました。</td>
+                  </tr>
+                  <tr>
+                    <td><!-- span class="label label-info">新機能</span --><span class="label label-success">修正</span></td>
+                    <td class="sp-va-m">IE8で、Bootstrap標準の.span*で幅指定した入力コントロールが巨大化する問題を修正しました。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+          </div>
+          <div id="known-issues" class="tab-pane">
+            <h2>既知の問題</h2>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-danger">未解決</span></td>
+                    <td class="sp-va-m">Firefoxにおいて、「templates」フォルダ内のhtmlファイルをローカル環境で開いた場合、アイコンフォント（FontAwesome）が正しく表示されない。画面モックの表示にFirefoxを使う場合は、この問題が解決するまで次のいずれかの方法で対処することをおすすめします。
+                      <ul class="sp-mt10">
+                        <li>「templates」フォルダ内のhtmlファイルを、すべて「sparkplug-*.*.*」の直下に移動したうえで、htmlファイル内の（CSSやJSなどの）外部ファイル読み込み指定箇所を適切なパスに変更する</li>
+                        <li>画面モック一式をWebサーバ上に置く</li>
+                      </ul>
+                    </td>
+                  </tr>
+                  <!-- r>
+                    <td class="sp-w100"><span class="label label-danger">未解決</span></td>
+                    <td class="sp-va-m">IE9において、タイトルボックスやモーダルのヘッダー上端左右の角丸が綺麗に表示されない。</td>
+                  </tr>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-danger">未解決</span></td>
+                    <td class="sp-va-m">IE8において、データグリッドのtd背景色のストライプが表示されない。</td>
+                  </tr>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-danger">未解決</span></td>
+                    <td class="sp-va-m">IE8において、sp-subnavのテキストにアンチエイリアスが適用されない。</td>
+                  </tr>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-danger">未解決</span></td>
+                    <td class="sp-va-m">IE8において、fixed時のデフォルト（.sp-subnav-inverseでない）スタイルのsp-subnavの背景グラデーションが濃すぎる。</td>
+                  </tr -->
+                </tbody>
+              </table>
+            </div>
+            <hr class="sp-bordered-transparent">
+            <h2>追加予定の機能</h2>
+            <div class="sp-datagrid">
+              <table class="table table-striped table-condensed table-bordered">
+                <tbody>
+                  <tr>
+                    <td class="sp-w100"><span class="label label-info">追加予定</span></td>
+                    <td class="sp-va-m">特定の条件で特定のコントロールを自動的にディスエーブル／イネーブルする機能。<br>たとえば、あるフォーム内の必須入力項目がひとつでも未入力のときは実行ボタンをディスエーブル表示し、すべて入力されると自動的にイネーブルに変化するようなもの。</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- コンテンツエリア -->
+
+    <hr class="sp-mb0">
+    <div class="sp-footer sp-skeleton sp-mt0">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-4">
+            <ul class="list-inline inline-divided sp-text-secondary sp-mt10">
+              <li><a href="release-notes.html">リリースノート</a></li>
+              <li><a href="terms-of-use.html">利用規約</a></li>
+            </ul>
+          </div>
+          <div class="col-xs-8">
+            <p class="pull-right sp-ta-r sp-text-additional">
+              &copy; Information Services International-Dentsu, Ltd.<br>
+              Designed and built by ISID System Technologies Dept. Technology Headquarters.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sp-btn-sticky-bottom"><a href="#pagetop"><i class="fa fa-angle-up"></i>ページの先頭へ</a></div>
+    <!-- 画面下端にはりつく「ページの先頭へ」ボタン -->
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/sparkplug.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+#enquete_name{
+	width:50%;
+}
+#enquete_piriod{
+	width:200px;
+}
+#enquete_man{
+	width:20%;
+}
+#enquete_status{
+	width:10%;
+}
+#enquete_button{
+	width:10%;	
+}
+.sp-datagrid{
+	width:1200px;
+}
